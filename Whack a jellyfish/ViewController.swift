@@ -34,11 +34,19 @@ class ViewController: UIViewController {
     func addNode() {
         let node = SCNNode(geometry: SCNBox(width: 0.2, height: 0.2, length: 0.2, chamferRadius: 0))
         node.position = SCNVector3(0, 0, -1)
+        node.geometry?.firstMaterial?.diffuse.contents = UIColor.blue
         self.SceneView.scene.rootNode.addChildNode(node)
     }
     
-    @objc func handleTap() {
-        print("tapped the sceneview")
+    @objc func handleTap(sender: UITapGestureRecognizer) {
+        let sceneViewTappedOn = sender.view as! SCNView
+        let touchCoordinates = sender.location(in: sceneViewTappedOn)
+        let hitTest = sceneViewTappedOn.hitTest(touchCoordinates)
+        if (hitTest.isEmpty) {
+            print("didn't touch anything")
+        } else {
+            print("touched a box")
+        }
     }
 
 }
