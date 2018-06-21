@@ -45,7 +45,9 @@ class ViewController: UIViewController {
         if (hitTest.isEmpty) {
             print("didn't touch anything")
         } else {
-            print("touched a box")
+            let hitResult = hitTest.first!
+            let geometry = hitResult.node.geometry
+            print(geometry)
         }
     }
 
