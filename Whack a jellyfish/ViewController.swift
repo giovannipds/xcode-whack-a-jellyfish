@@ -16,6 +16,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.SceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
         self.SceneView.session.run(configuration)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        self.SceneView.addGestureRecognizer(tapGestureRecognizer)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -35,6 +37,9 @@ class ViewController: UIViewController {
         self.SceneView.scene.rootNode.addChildNode(node)
     }
     
+    @objc func handleTap() {
+        print("tapped the sceneview")
+    }
 
 }
 
