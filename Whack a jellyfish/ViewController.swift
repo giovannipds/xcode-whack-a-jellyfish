@@ -84,6 +84,10 @@ class ViewController: UIViewController {
         self.timer.perform { () -> NextStep in
             self.countdown -= 1
             self.timerLabel.text = String(self.countdown)
+            if self.countdown == 0 {
+                self.timerLabel.text = "you lose"
+                return .stop
+            }
             return .continue
         }
     }
