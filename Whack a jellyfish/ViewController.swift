@@ -47,7 +47,9 @@ class ViewController: UIViewController {
         } else {
             let results = hitTest.first!
             let node = results.node
-            self.animateNode(node: node)
+            if node.animationKeys.isEmpty {
+                self.animateNode(node: node)
+            }
         }
     }
     
