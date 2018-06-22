@@ -52,17 +52,19 @@ class ViewController: UIViewController {
         if (hitTest.isEmpty) {
             print("didn't touch anything")
         } else {
-            let results = hitTest.first!
-            let node = results.node
-            if node.animationKeys.isEmpty {
-                SCNTransaction.begin()
-                self.animateNode(node: node)
-                SCNTransaction.completionBlock = {
-                    node.removeFromParentNode()
-                    self.addNode()
-                    self.restoreTimer()
+            if (countdown > 0) {
+                let results = hitTest.first!
+                let node = results.node
+                if node.animationKeys.isEmpty {
+                    SCNTransaction.begin()
+                    self.animateNode(node: node)
+                    SCNTransaction.completionBlock = {
+                        node.removeFromParentNode()
+                        self.addNode()
+                        self.restoreTimer()
+                    }
+                    SCNTransaction.commit()
                 }
-                SCNTransaction.commit()
             }
         }
     }
