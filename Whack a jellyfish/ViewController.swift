@@ -31,9 +31,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func play(_ sender: Any) {
+        self.setTimer()
         self.addNode()
         self.play.isEnabled = false
-        self.setTimer()
     }
     @IBAction func reset(_ sender: Any) {
     }
@@ -60,6 +60,7 @@ class ViewController: UIViewController {
                 SCNTransaction.completionBlock = {
                     node.removeFromParentNode()
                     self.addNode()
+                    self.restoreTimer()
                 }
                 SCNTransaction.commit()
             }
@@ -77,7 +78,7 @@ class ViewController: UIViewController {
     }
 
     func randomNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat {
-        return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum + secondNum) + min(firstNum, secondNum)
+        return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum - secondNum) + min(firstNum, secondNum)
     }
     
     func setTimer() {
@@ -90,6 +91,11 @@ class ViewController: UIViewController {
             }
             return .continue
         }
+    }
+    
+    func restoreTimer() {
+        self.countdown = 10
+        self.timerLabel.text = String(self.countdown)
     }
 
 }
