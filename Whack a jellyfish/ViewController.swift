@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     let configuration = ARWorldTrackingConfiguration()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.SceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
+//        self.SceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
         self.SceneView.session.run(configuration)
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         self.SceneView.addGestureRecognizer(tapGestureRecognizer)
