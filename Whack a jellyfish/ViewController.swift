@@ -45,10 +45,17 @@ class ViewController: UIViewController {
         if (hitTest.isEmpty) {
             print("didn't touch anything")
         } else {
-            let hitResult = hitTest.first!
-            let geometry = hitResult.node.geometry
-            print(geometry)
+            let results = hitTest.first!
+            let node = results.node
+            self.animateNode(node: node)
         }
+    }
+    
+    func animateNode(node: SCNNode) {
+        let spin = CABasicAnimation(keyPath: "position")
+        spin.fromValue = node.presentation.position
+        spin.toValue = SCNVector3(0,0,-2)
+        node.addAnimation(spin, forKey: "position")
     }
 
 }

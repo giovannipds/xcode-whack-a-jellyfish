@@ -14,8 +14,8 @@
 		AD11642E20DC065B00DD1B70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD11642C20DC065B00DD1B70 /* LaunchScreen.storyboard */; };
 		AD11643920DC065B00DD1B70 /* Whack_a_jellyfishTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11643820DC065B00DD1B70 /* Whack_a_jellyfishTests.swift */; };
 		AD11644420DC065B00DD1B70 /* Whack_a_jellyfishUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD11644320DC065B00DD1B70 /* Whack_a_jellyfishUITests.swift */; };
-		AD11645420DC364400DD1B70 /* Jellyfish.png in Resources */ = {isa = PBXBuildFile; fileRef = AD11645320DC364400DD1B70 /* Jellyfish.png */; };
 		AD11645720DC468500DD1B70 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AD11645620DC468500DD1B70 /* art.scnassets */; };
+		ADF48F6120DD4196002C3E0C /* Jellyfish.png in Resources */ = {isa = PBXBuildFile; fileRef = ADF48F6020DD4195002C3E0C /* Jellyfish.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +49,8 @@
 		AD11643F20DC065B00DD1B70 /* Whack a jellyfishUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Whack a jellyfishUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD11644320DC065B00DD1B70 /* Whack_a_jellyfishUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Whack_a_jellyfishUITests.swift; sourceTree = "<group>"; };
 		AD11644520DC065B00DD1B70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD11645320DC364400DD1B70 /* Jellyfish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Jellyfish.png; path = "../../../Downloads/3D Models/Spongebob_Jellyfish/Textures/Jellyfish.png"; sourceTree = "<group>"; };
 		AD11645620DC468500DD1B70 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		ADF48F6020DD4195002C3E0C /* Jellyfish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jellyfish.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,7 @@
 		AD11642220DC065600DD1B70 /* Whack a jellyfish */ = {
 			isa = PBXGroup;
 			children = (
-				AD11645320DC364400DD1B70 /* Jellyfish.png */,
+				ADF48F6020DD4195002C3E0C /* Jellyfish.png */,
 				AD11645620DC468500DD1B70 /* art.scnassets */,
 				AD11642320DC065600DD1B70 /* AppDelegate.swift */,
 				AD11642520DC065600DD1B70 /* ViewController.swift */,
@@ -235,7 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD11645420DC364400DD1B70 /* Jellyfish.png in Resources */,
+				ADF48F6120DD4196002C3E0C /* Jellyfish.png in Resources */,
 				AD11642E20DC065B00DD1B70 /* LaunchScreen.storyboard in Resources */,
 				AD11645720DC468500DD1B70 /* art.scnassets in Resources */,
 				AD11642B20DC065B00DD1B70 /* Assets.xcassets in Resources */,
