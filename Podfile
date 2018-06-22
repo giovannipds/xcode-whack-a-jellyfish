@@ -6,7 +6,6 @@ target 'Whack a jellyfish' do
   use_frameworks!
 
   # Pods for Whack a jellyfish
-  pod 'Each', '~> 1.2'
 
   target 'Whack a jellyfishTests' do
     inherit! :search_paths
@@ -17,5 +16,7 @@ target 'Whack a jellyfish' do
     inherit! :search_paths
     # Pods for testing
   end
+  
+  pod 'Each', '~> 1.2'
 
 end

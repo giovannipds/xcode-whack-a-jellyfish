@@ -8,8 +8,12 @@
 
 import UIKit
 import ARKit
+import Each
+
 class ViewController: UIViewController {
-    
+    var timer = Each(1).seconds
+    var countdown = 10
+    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var play: UIButton!
     @IBOutlet weak var SceneView: ARSCNView!
     let configuration = ARWorldTrackingConfiguration()
@@ -29,6 +33,7 @@ class ViewController: UIViewController {
     @IBAction func play(_ sender: Any) {
         self.addNode()
         self.play.isEnabled = false
+        self.setTimer()
     }
     @IBAction func reset(_ sender: Any) {
     }
@@ -71,8 +76,16 @@ class ViewController: UIViewController {
         node.addAnimation(spin, forKey: "position")
     }
 
-}
+    func randomNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat {
+        return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum + secondNum) + min(firstNum, secondNum)
+    }
+    
+    func setTimer() {
+        self.timer.perform { () -> NextStep in
+            self.countdown -= 1
+            self.timerLabel.text = String(self.countdown)
+            return .continue
+        }
+    }
 
-func randomNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat {
-    return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum + secondNum) + min(firstNum, secondNum)
 }
