@@ -10,6 +10,7 @@ import UIKit
 import ARKit
 class ViewController: UIViewController {
     
+    @IBOutlet weak var play: UIButton!
     @IBOutlet weak var SceneView: ARSCNView!
     let configuration = ARWorldTrackingConfiguration()
     override func viewDidLoad() {
@@ -27,6 +28,7 @@ class ViewController: UIViewController {
     }
     @IBAction func play(_ sender: Any) {
         self.addNode()
+        self.play.isEnabled = false
     }
     @IBAction func reset(_ sender: Any) {
     }
@@ -34,7 +36,7 @@ class ViewController: UIViewController {
     func addNode() {
         let jellyfishScene = SCNScene(named: "art.scnassets/Jellyfish.scn")
         let jellyfishNode = jellyfishScene?.rootNode.childNode(withName: "Jellyfish", recursively: false)
-        jellyfishNode?.position = SCNVector3(0, 0, -1)
+        jellyfishNode?.position = SCNVector3(randomNumbers(firstNum: -1, secondNum: 1), randomNumbers(firstNum: -0.5, secondNum: 0.5), randomNumbers(firstNum: -1, secondNum: 1))
         self.SceneView.scene.rootNode.addChildNode(jellyfishNode!)
     }
     
@@ -57,7 +59,7 @@ class ViewController: UIViewController {
         let spin = CABasicAnimation(keyPath: "position")
         spin.fromValue = node.presentation.position
         spin.toValue = SCNVector3(node.presentation.position.x - 0.2, node.presentation.position.y - 0.2,node.presentation.position.z - 0.2)
-        spin.duration = 2
+        spin.duration = 0.07
         spin.autoreverses = true
         spin.repeatCount = 5
         node.addAnimation(spin, forKey: "position")
@@ -65,3 +67,6 @@ class ViewController: UIViewController {
 
 }
 
+func randomNumbers(firstNum: CGFloat, secondNum: CGFloat) -> CGFloat {
+    return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNum + secondNum) + min(firstNum, secondNum)
+}
