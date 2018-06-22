@@ -36,6 +36,12 @@ class ViewController: UIViewController {
         self.play.isEnabled = false
     }
     @IBAction func reset(_ sender: Any) {
+        self.timer.stop()
+        self.restoreTimer()
+        self.play.isEnabled = true
+        SceneView.scene.rootNode.enumerateChildNodes { (node, _) in
+            node.removeFromParentNode()
+        }
     }
     
     func addNode() {
