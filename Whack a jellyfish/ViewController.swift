@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     func animateNode(node: SCNNode) {
         let spin = CABasicAnimation(keyPath: "position")
         spin.fromValue = node.presentation.position
-        spin.toValue = SCNVector3(0,0,-2)
+        spin.toValue = SCNVector3(0,0,-1)
         node.addAnimation(spin, forKey: "position")
     }
 
