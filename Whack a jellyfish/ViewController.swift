@@ -55,6 +55,8 @@ class ViewController: UIViewController {
         let spin = CABasicAnimation(keyPath: "position")
         spin.fromValue = node.presentation.position
         spin.toValue = SCNVector3(0,0,node.presentation.position.z - 1)
+        spin.duration = 3
+        spin.autoreverses = true
         node.addAnimation(spin, forKey: "position")
     }
 
