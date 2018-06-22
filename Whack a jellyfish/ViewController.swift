@@ -51,6 +51,7 @@ class ViewController: UIViewController {
             let node = results.node
             if node.animationKeys.isEmpty {
                 self.animateNode(node: node)
+                node.removeFromParentNode()
             }
         }
     }
